@@ -1,0 +1,243 @@
+.header{
+    height:'100%';
+    box-shadow: $shadow-1;
+
+
+}
+
+
+// -------------------- Ad -----------------------------------
+
+.ad{
+    height:58px;
+    background-image: url('../../public/images/ad.jpg');
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat:no-repeat ;
+}
+
+
+// --------------- Top --------------------------
+.top{
+    background-color: #f8f8f8;
+    border-top:1px solid #eee;
+    border-bottom: 1px solid #eee;
+    &__container{
+        max-width: 95%;
+        margin:0 auto;
+        padding:5px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__list{
+        display: flex;
+        gap: 15px;
+
+        li{
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            color: #666;
+            cursor: pointer;
+            .flex{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 2px;
+                svg{
+                    transform: scale(1.2);
+                    margin-right: 3px;
+                }
+            }
+            img{
+                width: 28px;
+                height: 28px;
+                object-fit: cover;
+                border-radius: 50%;
+            }
+            svg{
+                width: 20px;
+                height: 20px;
+                fill: #ccc
+            }
+            span{
+                font-size: 12px;
+            }
+
+            &:hover{
+                span{
+                    color: #222
+                }
+                svg{
+                    fill: #666
+                }
+            }
+
+            &::after{
+                content: "";
+                position: absolute;
+                right: -8px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 1px;
+                height: 20px;
+                background-color: #ccc;
+            }
+            &:last-of-type{
+                &::after{
+                    display: none;
+                }
+            }
+
+            @media (max-width: 670px) {
+                &:nth-of-type(2) , &:nth-of-type(3) , &:nth-of-type(4){
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+
+// ----------------- User Menu -------------------
+.menu{
+    width: 280px;
+    position: absolute;
+    box-shadow: $shadow-1;
+    top:100%;
+    right: 0;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    padding:1rem 0;
+    gap:1rem;
+    h4 {
+        text-align: center;
+    }
+    .flex {
+        display: flex !important;
+        gap: 10px !important;
+        width: 100%;
+        padding: 0 1rem;
+    }
+
+
+    &__img{
+        width: 100px !important;
+        height: 100px !important;
+    }
+
+    .col{
+        display: flex;
+        flex-direction: column;
+        span{
+            &:last-of-type{
+                font-size: 14px;
+                color: $blue-color;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    ul{
+        li{
+            height: 30px;
+            a{
+                width:100%;
+                margin-left: 1rem;
+
+            }
+            &:hover{
+                background-color: #eeeeeebe;
+            }
+        }
+    }
+}
+
+
+// --------------------- Main ---------------------------
+
+.main{
+    position: relative;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    &__container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        width:100%;
+        .logo {
+            img {
+                height: 60px;
+                width: auto;
+            }
+        }
+
+        .search {
+            display: flex;
+            align-items: center;
+            flex: 1;
+            background-color: #eeeeeebc;
+            height: 40px;
+            border-radius: 5px;
+            overflow: hidden;
+            input {
+                border: none;
+                outline: none;
+                background-color: transparent;
+                width: 100%;
+                padding-left: 1rem;
+            }
+
+            &__icon {
+                width: 40px;
+                height: 40px;
+                 // to center one element
+                display: grid;
+                place-items: center;
+                justify-content: center;
+                cursor: pointer;
+                background-color: $blue-color;
+                svg {
+                    height: 21px;
+                    width: 21px;
+                    fill: #fff
+                }
+            }
+        }
+
+
+        .cart {
+            position: relative;
+            svg {
+                width: 35px;
+                height: 35px;
+                fill: #666
+            }
+
+            span {
+                position: absolute;
+                top: -5px;
+                right: -10px;
+                background-color: $blue-color;
+                width: 23px;
+                height: 23px;
+                border-radius: 50%;
+                display: grid;
+                place-items: center;
+                font-weight: 600;
+                color: #fff
+            }
+        }
+    }
+}

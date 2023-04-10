@@ -7,15 +7,15 @@ import cart from './cartSlice'
 
 const reducers = combineReducers({ cart })
 
-const config = {
+const persistConfig = {
   key: 'root',
   storage,
 }
 
-const reducer = persistReducer(config, reducers)
+const persistedReducer = persistReducer(persistConfig, reducers)
 
 const store = configureStore({
-  reducer: reducer,
+  reducer: persistedReducer,
   devTools: process.env.NODE_ENV !== 'production',
   middleware: [thunk],
 })
