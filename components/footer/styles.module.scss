@@ -26,4 +26,27 @@
             }
         }
     }
+
+    &__socials {
+        section {
+            h3 {
+                font-size: 12px;
+                font-weight: 700;
+                color: #222
+            }
+            ul {
+                margin-top: 10px;
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                li {
+                    font-size: 2rem;
+                    color: #666;
+                    &:hover {
+                        color: $blue-color;
+                    }
+                }
+            }
+        }
+    }
 }
