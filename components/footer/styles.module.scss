@@ -4,12 +4,23 @@
         position: relative;
         width: 100%;
         display: grid;
+        grid-template-areas: "links" "socials" "newsletter" "payment" "copyright";
         gap: 3rem;
         padding: 1rem;
+
+        @media (min-width:800px) {
+            grid-template-areas: "links socials" "links newsletter" "payment copyright";
+        }
+
+        @media (min-width:1200px) {
+            max-width: 1200px;
+            margin: auto;
+        }
     }
     &__links {
         display: grid;
         grid-template-columns: repeat(3 , 1fr);
+        grid-area: "links";
         gap: 1rem;
 
         ul {
@@ -28,6 +39,7 @@
     }
 
     &__socials {
+        grid-area: "socials";
         section {
             h3 {
                 font-size: 12px;
@@ -56,7 +68,8 @@
         gap: 5px;
     }
 
-    &__news__letter {
+    &__newsletter {
+        grid-area: "newsletter";
         h3 {
             font-size: 12px;
             font-weight: 700;
@@ -90,6 +103,7 @@
     }
 
     &__payment {
+        grid-area: "payment";
         h3 {
             font-size: 12px;
             font-weight: 600;
@@ -112,6 +126,7 @@
     }
 
     &__copyright {
+        grid-area: "copyright";
         color: #666;
         font-size: 12px;
 
