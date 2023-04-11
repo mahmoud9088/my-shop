@@ -10,10 +10,7 @@ const Main = () => {
     <div className={styles.main}>
       <div className={styles.main__container}>
         <Link href="/" className={styles.logo}>
-          <img
-            src="https://th.bing.com/th/id/R.c8a39cfffc00aaacd2e44622e8fb33e2?rik=tqBOGvd054uHXw&pid=ImgRaw&r=0"
-            alt=""
-          />
+          <img src="/logo.png" alt="" />
         </Link>
         <div className={styles.search}>
           <input type="text" placeholder="Search..." />

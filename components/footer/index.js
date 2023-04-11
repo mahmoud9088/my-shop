@@ -3,6 +3,8 @@ import styles from './styles.module.scss'
 import Links from './Links'
 import Socials from './Socials'
 import NewsLetter from './NewsLetter'
+import Payment from './Payment'
+import Copyright from './Copyright'
 
 const Footer = () => {
   return (
@@ -11,6 +13,8 @@ const Footer = () => {
         <Links />
         <Socials />
         <NewsLetter />
+        <Payment />
+        <Copyright />
       </div>
     </footer>
   )

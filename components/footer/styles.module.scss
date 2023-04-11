@@ -88,4 +88,73 @@
         }
 
     }
+
+    &__payment {
+        h3 {
+            font-size: 12px;
+            font-weight: 600;
+            color:#222
+        }
+
+        .methods__wrapper {
+            position: relative;
+            margin-top: 10px;
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+            img {
+                width: 60px;
+                height: 36px;
+                
+            }
+        }
+
+    }
+
+    &__copyright {
+        color: #666;
+        font-size: 12px;
+
+        
+         ul {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                column-gap: 2rem;
+                margin-top: 5px;
+                li {
+                    position: relative;
+                    text-decoration: underline;
+                    &:hover {
+                        color: $blue-color
+                    }
+
+                    &::after{
+                        content: "";
+                        position: absolute;
+                        height: 14px;
+                        width: 1px;
+                        background-color: #666;
+                        right: -1rem;
+                        
+
+
+                    }
+
+                    &:last-of-type::after{
+                            display: none;
+                        }
+                    
+                }
+
+                .location {
+                    a {
+                        display:flex;
+                        align-items: center;
+                        gap: 2px;
+                    }
+                }
+            }
+        
+    }
 }
