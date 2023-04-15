@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './styles.module.scss'
 import Link from 'next/link'
+import { signOut } from 'next-auth/react'
 
 const UserMenu = ({ session }) => {
   return (
@@ -12,7 +13,7 @@ const UserMenu = ({ session }) => {
           <div className={styles.col}>
             <span>Welcome Back,</span>
             <h3>Mahmoud</h3>
-            <span>Sign Out</span>
+            <span onClick={signOut}>Sign Out</span>
           </div>
         </div>
       ) : (
