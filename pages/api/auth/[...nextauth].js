@@ -5,6 +5,7 @@ import NextAuth from 'next-auth'
 // import EmailProvider from 'next-auth/providers/email'
 
 import GitHubProvider from 'next-auth/providers/github'
+import GoogleProvider from 'next-auth/providers/google'
 import clientPromise from '@/lib/mongodb'
 import { MongoDBAdapter } from '@next-auth/mongodb-adapter'
 
@@ -19,6 +20,10 @@ export default NextAuth({
     GitHubProvider({
       clientId: process.env.GitHub_ID,
       clientSecret: process.env.GitHub_SECRET,
+    }),
+    GoogleProvider({
+      clientId: process.env.GOOGLE_ID,
+      clientSecret: process.env.GOOGLE_SECRET,
     }),
     // AppleProvider({
     //   clientId: process.env.APPLE_ID,

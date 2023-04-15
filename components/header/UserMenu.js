@@ -2,17 +2,13 @@ import React from 'react'
 import styles from './styles.module.scss'
 import Link from 'next/link'
 
-const UserMenu = ({ loggedIn }) => {
+const UserMenu = ({ session }) => {
   return (
     <div className={styles.menu}>
       <h4>Welcome to Shopay!</h4>
-      {loggedIn ? (
+      {session ? (
         <div className={styles.flex}>
-          <img
-            src="https://th.bing.com/th/id/OIP.w6Cs6qz234c71XloeqKdwgHaHa?pid=ImgDet&rs=1"
-            alt=""
-            className={styles.menu__img}
-          />
+          <img src={session?.user?.image} alt="" className={styles.menu__img} />
           <div className={styles.col}>
             <span>Welcome Back,</span>
             <h3>Mahmoud</h3>

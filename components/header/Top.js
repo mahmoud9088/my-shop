@@ -6,8 +6,12 @@ import { BsSuitHeart } from 'react-icons/bs'
 import { RiAccountPinCircleLine, RiArrowDropDownFill } from 'react-icons/ri'
 import Link from 'next/link'
 import UserMenu from './UserMenu'
+import { useSession } from 'next-auth/react'
 
 const Top = () => {
+  const { data: session } = useSession()
+  console.log(session, 'sssssssseeeeeeeeeeeeeeeessssssssssssssion')
+
   const [loggedIn, setLoggedIn] = useState(true)
   const [visible, setVisible] = useState(false)
   return (
@@ -43,10 +47,10 @@ const Top = () => {
           <li
             onMouseOver={() => setVisible(true)}
             onMouseLeave={() => setVisible(false)}>
-            {loggedIn ? (
+            {session ? (
               <div className={styles.flex}>
-                <img src="https://th.bing.com/th/id/OIP.w6Cs6qz234c71XloeqKdwgHaHa?pid=ImgDet&rs=1" />
-                <span>Mahmoud Salman</span>
+                <img src={session?.user?.image} />
+                <span>{session?.user?.name}</span>
                 <RiArrowDropDownFill />
               </div>
             ) : (
@@ -56,7 +60,7 @@ const Top = () => {
                 <RiArrowDropDownFill />
               </div>
             )}
-            {visible && <UserMenu loggedIn={loggedIn} />}
+            {visible && <UserMenu session={session} />}
           </li>
         </ul>
       </div>
