@@ -10,6 +10,7 @@ import Input from '@/components/common/inputs/login-input'
 import { IoKeyOutline } from 'react-icons/io5'
 
 import * as Yub from 'yup'
+import CircledIconBtn from '@/components/common/buttons/circledIconBtn'
 
 const signin = () => {
   const [loginData, setLoginData] = useState({
@@ -68,6 +69,14 @@ const signin = () => {
                     value={password}
                     onChange={handleDataChange}
                   />
+
+                  <CircledIconBtn type="submit" text="Sign in" />
+                  {/* {login_error && (
+                    <span className={styles.error}>{login_error}</span>
+                  )} */}
+                  <div className={styles.forgot}>
+                    <Link href="/auth/forgot">Forgot password ?</Link>
+                  </div>
                 </Form>
               )}
             </Formik>
