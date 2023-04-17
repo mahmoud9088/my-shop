@@ -1,0 +1,68 @@
+.input__container{
+    width: 100%;
+    background-color: #f0f0f0;
+    border-radius: 30px;
+    padding: 15px;
+    display: grid;
+    grid-template-columns: 15% auto;
+    margin-bottom: 15px;
+    .icon{
+        display: grid;
+        place-items: center;
+        svg{
+            width: 30px;
+            height: 30px;
+            stroke: #6666669a;
+            fill: #6666669a
+        }
+    }
+
+    input{
+        outline: none;
+        border: none;
+        background-color: transparent;
+    }
+}
+
+.error{
+    background-color: $light-error-color;
+    margin-top: 5rem;
+    position: relative;
+
+    .icon {
+        svg {
+            fill: #fff;
+            stroke: #fff
+        }
+    }
+    input {
+        color: #fff;
+        &::placeholder{
+            color: #fff;
+        }
+    }
+
+    &__popup{
+        position: absolute;
+        top: -70px;
+        background-color: $dark-error-color;
+        border-radius: 30px;
+        padding: 10px;
+        width: 100%;
+        height: 60px;
+        display: grid;
+        place-items: center;
+        color:#fff;
+
+        span {
+            position: absolute;
+            bottom: -10px;
+            left:2rem;
+            border-top: 10px solid $dark-error-color;
+            border-right: 10px solid transparent;
+            border-left: 10px solid transparent;
+        }
+    }
+
+    
+}

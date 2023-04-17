@@ -15,6 +15,9 @@ export default NextAuth({
     strategy: 'jwt',
   },
   secret: process.env.JWT_SECRET,
+  pages: {
+    signIn: '/signin',
+  },
   providers: [
     // OAuth authentication providers...
     GitHubProvider({
