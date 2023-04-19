@@ -11,8 +11,10 @@ import { IoKeyOutline } from 'react-icons/io5'
 
 import * as Yub from 'yup'
 import CircledIconBtn from '@/components/common/buttons/circledIconBtn'
+import { getProviders } from 'next-auth/react'
 
-const signin = () => {
+const signin = ({ providers }) => {
+  console.log(providers, 'providers....')
   const [loginData, setLoginData] = useState({
     email: '',
     password: '',
@@ -80,6 +82,24 @@ const signin = () => {
                 </Form>
               )}
             </Formik>
+            <div className={styles.login__socials}>
+              <span className={styles.or}>Or continue with</span>
+              <div className={styles.login__socials_wrap}>
+                {providers.map((provider) => (
+                  <div key={provider.name}>
+                    <button
+                      className={styles.social__btn}
+                      onClick={() => signIn(provider.id)}>
+                      <img
+                        src={`/icons/${provider.name}.png`}
+                        alt={provider.name}
+                      />
+                      Sign in with{provider.name}
+                    </button>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -89,3 +109,13 @@ const signin = () => {
 }
 
 export default signin
+
+export async function getServerSideProps(context) {
+  const providers = Object.values(await getProviders())
+
+  console.log(providers, '----- providers')
+
+  return {
+    props: { providers },
+  }
+}
